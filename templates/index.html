@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+    <div class="container">
+
+		<div class="row">
+			<div class="col-sm-6"><p class="float-start"></p></div>  
+			<div class="col-sm-6"><p class="float-end">
+				<button type="button" class="btn btn-outline-dark mt-3"  onclick="sync_users()"  >Sync user from AWS</button>
+				<button type="button" class="btn btn-outline-dark mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" >Create new user</button>
+
+			</p></div>  
+		  </div>
+
+
+		<div class="card mt-1">
+			<div class="card-body">
+				<h4 class="card-title">Users</h4>
+				<table id="data" class="table table-striped">
+				<thead>
+				<tr>
+					<th>User Name</th>
+					<th>Group</th>
+					<th>Keys</th>
+					<th>Created on</th>
+					<th>Last login on</th>
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				{% for user in users %}
+					<tr id="{{user.name}}">
+					<td>{{ user.name }}</td>
+					<td>{{ user.groups|join(", ") }}</td>
+					<td>
+						{% for k in user.get('keys') %}
+						<span> {{ k|join(", ") }}  </span> 
+						{% endfor %}
+					</td>
+					
+					<td>{{ user.created[:10] }}
+					<td>{{ user.last_login[:10] }}
+					</td>
+					
+					<td>
+						<div id="spinner_{{user.name}}" class="spinner-border spinner-border-sm" role="status" style="display: none;">
+							<span class="visually-hidden"></span>
+						</div>
+						<button type="button" onclick="delete_user('{{ user.name }}')" class="btn btn-outline-dark btn-sm">Delete</button>
+					</td>
+
+					</tr>
+				{% endfor %}
+				</tbody>
+				</table>
+			</div>
+		</div>	
+
+	</div>	
+	<!-- addd user Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Create new user</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+			<div class="container">
+				<div class="mb-3">
+				  <label for="username" class="form-label">Username</label>
+				  <input type="text" class="form-control" id="iam_username">
+				</div>
+				
+				<div class="mb-3">
+					<label for="groups" class="form-label">Groups</label>
+					<select id="iam_groups" class="form-select form-select-sm" aria-label=".form-select-sm example" multiple >
+						{% for group in groups %}
+							<option value="{{group}}">{{group}}</option>"
+						{% endfor %}
+					</select>
+				</div>
+		
+				<div class="mb-3">
+					<label for="policies" class="form-label">Attach Policies</label>
+					<select id="iam_attach_policies" class="form-select form-select-sm" aria-label=".form-select-sm example" multiple >
+						{% for policy in attach_policies %}
+							<option value="{{policy.PolicyArn}}">{{policy.PolicyName}}</option>"
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" onclick="add_user()" class="btn btn-primary">Submit</button>
+
+		</div>
+	  </div>
+		</div>
+  	</div>
+
+	
+	  <div class="modal fade" id="deleteModel" tabindex="-1"  data-bs-backdrop="static" aria-labelledby="deleteModelLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<strong>Deleting...</strong>
+  				<div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+		</div>
+		
+	  </div>
+		</div>
+  	</div>
+
+
+	
+	{% endblock %}

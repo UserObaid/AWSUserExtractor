@@ -1,0 +1,153 @@
+IAM User Accounts
+=================
+
+Username: Administrator1
+Created: 2022-10-01
+Last Login: Never
+Groups: CustomAdministrator
+Keys: AKIARVSDLRVG3SUGGKG7 (Never)
+AttacheedPolicies: []
+Policies: []
+
+Username: Administrator2
+Created: 2022-10-01
+Last Login: Never
+Groups: CustomAdministrator
+Keys: AKIARVSDLRVG3VKEZ3ZO (Never)
+AttacheedPolicies: []
+Policies: []
+
+Username: BackendDev
+Created: 2022-10-02
+Last Login: 2022-10-02
+Groups: 
+Keys: 
+AttacheedPolicies: [
+  {
+    "PolicyName": "AdministratorAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+  }
+]
+Policies: []
+
+Username: ses-user-ullah
+Created: 2022-10-02
+Last Login: Never
+Groups: 
+Keys: AKIARVSDLRVGSESDGFWU (Never)
+AttacheedPolicies: [
+  {
+    "PolicyName": "AmazonSESFullAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AmazonSESFullAccess"
+  }
+]
+Policies: []
+
+Username: SupportUser1
+Created: 2022-10-01
+Last Login: Never
+Groups: CustomSupport
+Keys: AKIARVSDLRVG2HTTIJZQ (Never)
+AttacheedPolicies: [
+  {
+    "PolicyName": "AWSSupportAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportAccess"
+  },
+  {
+    "PolicyName": "SupportUser",
+    "PolicyArn": "arn:aws:iam::aws:policy/job-function/SupportUser"
+  },
+  {
+    "PolicyName": "AWSSupportAppReadOnlyAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportAppReadOnlyAccess"
+  },
+  {
+    "PolicyName": "AWSSupportAppFullAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportAppFullAccess"
+  },
+  {
+    "PolicyName": "AWSSupportPlansFullAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportPlansFullAccess"
+  },
+  {
+    "PolicyName": "AWSSupportPlansReadOnlyAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportPlansReadOnlyAccess"
+  },
+  {
+    "PolicyName": "ElementalSupportCenterFullAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/ElementalSupportCenterFullAccess"
+  }
+]
+Policies: []
+
+Username: SupportUser2
+Created: 2022-10-01
+Last Login: Never
+Groups: CustomSupport
+Keys: AKIARVSDLRVG2GYAVFC4 (Never)
+AttacheedPolicies: [
+  {
+    "PolicyName": "AWSSupportAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportAccess"
+  },
+  {
+    "PolicyName": "SupportUser",
+    "PolicyArn": "arn:aws:iam::aws:policy/job-function/SupportUser"
+  },
+  {
+    "PolicyName": "AWSSupportAppReadOnlyAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportAppReadOnlyAccess"
+  },
+  {
+    "PolicyName": "AWSSupportAppFullAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportAppFullAccess"
+  },
+  {
+    "PolicyName": "AWSSupportPlansFullAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportPlansFullAccess"
+  },
+  {
+    "PolicyName": "AWSSupportPlansReadOnlyAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportPlansReadOnlyAccess"
+  },
+  {
+    "PolicyName": "ElementalSupportCenterFullAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/ElementalSupportCenterFullAccess"
+  }
+]
+Policies: []
+
+Username: TrustedAdvisorUser1
+Created: 2022-10-01
+Last Login: Never
+Groups: CustomAdvisor
+Keys: AKIARVSDLRVGUQBKYSVB (Never)
+AttacheedPolicies: [
+  {
+    "PolicyName": "AWSTrustedAdvisorPriorityFullAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSTrustedAdvisorPriorityFullAccess"
+  },
+  {
+    "PolicyName": "AWSTrustedAdvisorPriorityReadOnlyAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSTrustedAdvisorPriorityReadOnlyAccess"
+  }
+]
+Policies: []
+
+Username: TrustedAdvisorUser2
+Created: 2022-10-01
+Last Login: Never
+Groups: CustomAdvisor
+Keys: AKIARVSDLRVG4O4IQ5EH (Never)
+AttacheedPolicies: [
+  {
+    "PolicyName": "AWSTrustedAdvisorPriorityFullAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSTrustedAdvisorPriorityFullAccess"
+  },
+  {
+    "PolicyName": "AWSTrustedAdvisorPriorityReadOnlyAccess",
+    "PolicyArn": "arn:aws:iam::aws:policy/AWSTrustedAdvisorPriorityReadOnlyAccess"
+  }
+]
+Policies: []
+
